@@ -1,0 +1,80 @@
+
+{% extends 'based.html' %}
+
+
+{% block title %}
+
+<span style="color:#976dd8;">HomePage</span>
+{% endblock title %}
+
+{% block content %}
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+    <!-- Header -->
+    <header id="portfolio">
+      <div class="w3-container">
+      <h1><b>Rekomendasi Lokasi Tour</b></h1>
+      <div class="w3-section w3-bottombar w3-padding-16">
+        <span class="w3-margin-right">Filter:</span> 
+        <button class="w3-button w3-black">ALL</button>
+        <button class="w3-button w3-white"><i class="fa fa-compass w3-margin-right"></i>Lokasi</button>
+        <button class="w3-button w3-white w3-hide-small"><i class="fa fa-money w3-margin-right"></i>Price</button>
+      </div>
+      </div>
+    </header>
+    
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="{{bali0img}}" alt="Company_1" style="max-width:100%; max-height:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>{{bali0spot}}</b></p>
+          <p>{{bali0price}}</p>
+          <form method="POST" action="">
+            {% csrf_token %}
+            <input type="hidden" name="lokasi" value="{{bali0spot}}">
+            <input type="hidden" name="type" value="lihat">
+            <button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Lihat</button>
+          </form>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="{{bali1img}}" alt="Company_2" style="max-width:100%; max-height:100% " class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+            <p><b>{{bali1spot}}</b></p>
+            <p>{{bali1price}}</p>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="lokasi" value="{{bali1spot}}">
+              <input type="hidden" name="type" value="lihat">
+              <button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Lihat</button>
+            </form>
+        </div>
+      </div>
+      <div class="w3-third w3-container">
+        <img src="{{bali2img}}" alt="Company_3" style="max-width:100%; max-height:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+            <p><b>{{bali2spot}}</b></p>
+            <p>{{bali2price}}</p>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="lokasi" value="{{bali2spot}}">
+              <input type="hidden" name="type" value="lihat">
+              <button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Lihat</button>
+            </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-32">
+      <div class="w3-bar">
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+      </div>
+    </div>
+{% endblock content %}

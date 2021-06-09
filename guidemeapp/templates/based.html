@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/ugm.png'%}">
+    <link rel="icon" type="image/png" href="{% static 'img/ugm.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>GuideMe! | Your Tour Guide Solution</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/light-bootstrap-dashboard.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="topnav">
+            <div class="navbar-brand pull-right">
+                <img src="/static/img/large.png" alt="Logo" style="width:100%;">
+            </div>
+            <a class="active" href="{% url 'homepage' %}">Home</a>
+            <div class="menujatuh">
+                <button class="btnjatuh">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="menujatuh-content">
+                    <a href="{% url 'tour_guide' %}">By Tour Guide</a>
+                    <a href="{% url 'lokasi' %}">By Location</a>
+                </div>
+            </div>
+            <a href="{% url 'pesanan' %}">Pesanan</a>
+        </div>
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">	   
+									{% block content %}
+
+									{% endblock content %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            {% include "footer.html" %}
+        </div>
+    </div>
+		
+		
+	
+</body>
+<script src="{% static 'js/core/jquery.3.2.1.min.js'%}" type="text/javascript"></script>
+<script src="{% static 'js/core/popper.min.js'%}" type="text/javascript"></script>
+<script src="{% static 'js/core/bootstrap.min.js'%}" type="text/javascript"></script>
+<script src="{% static 'js/plugins/bootstrap-switch.js'%}"></script>
+<script src="{% static 'js/light-bootstrap-dashboard.js'%} " type="text/javascript"></script>
+<script src="{% static 'js/demo.js'%}"></script>
+<script type="text/javascript" src="{% static 'vendor/ckeditor/ckeditor.js'%}"></script>
+
+</html>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    .topnav a {
+
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 33px 33px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    .menujatuh {
+        text-align: center;
+        float: left;
+        overflow: hidden;
+    }
+    
+    .menujatuh .btnjatuh {
+        font-size: 20px; 
+        border: none;
+        outline: none;
+        color: white;
+        padding: 33px 33px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .topnav a:hover, .menujatuh:hover .btnjatuh {
+        background-color: #cfcfcf;
+        color: black;
+    }
+
+    .menujatuh-content{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .menujatuh-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .menujatuh-content a:hover {
+        background-color: #ddd;
+    }
+
+    .menujatuh:hover .menujatuh-content {
+        display: block;
+    }
+    .topnav a.active {
+        background-color: #3466aa;
+        color: white;
+    }
+</style>

@@ -1,0 +1,38 @@
+{% extends 'based.html' %}
+
+
+{% block title %}
+
+<span style="color:#976dd8;">HomePage</span>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="container row">
+        <div class="container col-4">
+            <img src="/static/img/avatar.png" alt="Company_1" style="max-width:100%; max-height:100%" class="w3-hover-opacity">
+        </div>
+        {% for data in tourguide_data %}
+        <div class="container col-7">
+            <strong>Nama</strong> : {{data.nama.nama}}<br>
+            <strong>Agensi</strong> : {{data.agensi.nama_agensi}}<br>
+            <strong>Lokasi Wisata</strong> : {{data.tempat_wisata}}<br>
+            <strong>Jangkauan Harga</strong> : {{data.jangkauan_harga}}<br>
+            <strong>Alamat Email</strong> : {{data.nama.alamat_email}}<br>
+            <strong>Tanggal Lahir</strong> : {{data.nama.tanggal_lahir}}<br>
+            <strong>Jenis Kelamin</strong> : {{data.nama.jenis_kelamin}}<br>
+            <strong>Nomor HP</strong> : {{data.nama.nomor_hp}}<br><br>
+            <strong>Deskripsi : </strong><br>
+            {{data.deskripsi}}
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="hidden" name="pelanggan" value="{{ data.pengguna }}">
+                <input type="hidden" name="tour_guide" value="{{ data.id_tourguide }}">
+                <input type="hidden" name="lokasi" value="{{ data.lokasi }}">
+                <button type="submit" class="btn btn-info btn-fill pull-right btn-primary">Pesan</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

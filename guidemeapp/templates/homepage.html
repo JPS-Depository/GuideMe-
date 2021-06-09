@@ -1,0 +1,195 @@
+<style>
+	body{
+	background-image: url('/static/img/background-content.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	font-family: SFProDisplay;
+}
+</style>
+{% extends 'based.html' %}
+
+
+{% block title %}
+
+<span style="color:#976dd8;">HomePage</span>
+{% endblock title %}
+
+{% block content %}
+<header id="recommended">
+    <div class="container-fluid" style="padding-left: 16px;">
+    	<h1><b>Recommended</b></h1>
+    </div>
+</header>
+  
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/static/img/full-screen-image-3.jpg" alt="tester" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/static/img/full-screen-image-3.jpg" alt="tester2" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/static/img/full-screen-image-3.jpg" alt="tester3" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/static/img/full-screen-image-3.jpg" alt="tester4" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/static/img/full-screen-image-3.jpg" alt="tester5" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/static/img/full-screen-image-3.jpg" alt="tester6" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+<!-- {% load static %}
+
+
+<div class="row" style="padding-bottom: 35px; border-bottom: 0.5px solid rgba(0, 0, 0, .5)">
+	<div class="col-lg-2">
+		<img class="rounded-circle" src="{% static 'img/avatar.png'%}" style="width: 138px;height: 138px;" >
+		</div>
+		<div class="col-lg-2 d-flex align-items-center" style="margin-left: 45px;">
+			<a href="./">
+				<div class="button-edit" style="width: 120px;">
+					<img src="{% static 'img/edit-purple.png'%}" style="width:15px;height:15px;margin:10px;">
+						<div class="edit-text">
+							Edit
+						</div>
+				</div>
+			</a>
+		</div>
+			<div class="col-lg-4 d-flex align-items-center" style="margin-left: 10px;">
+				<a href="">
+					<div class="button-edit" style="width:250px;">
+						<img src="{% static 'img/key.png'%}" style="width:15px;height:15px;margin:10px;">
+							<div class="edit-text">
+					Ubah Password
+				</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 d-flex align-items-center" style="margin-left: 10px;">
+					<a href="">
+						<div class="button-edit" style="width:160px;">
+							<img src="{% static 'img/logout.png'%}" style="width:15px;height:15px;margin:10px;">
+								<div class="edit-text">
+					Keluar
+				</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="row" style="padding-top:35px;">
+					<div class="col-lg-5" style="margin-right: 70px;">
+						<div class="desc">
+							<div class="title-desc">
+				Nama Lengkap
+			</div>
+							<div class="detail-desc">
+				{{full_name}}
+			</div>
+						</div>
+						<div class="desc">
+							<div class="title-desc">
+				Email
+			</div>
+							<div class="detail-desc">
+				{{email}}
+			</div>
+						</div>
+						<div class="desc">
+							<div class="title-desc">
+				Nomor Handphone
+			</div>
+							<div class="detail-desc">
+				{{nomer_hp}}
+			</div>
+						</div>
+						<div class="desc">
+							<div class="title-desc">
+				Alamat
+			</div>
+							<div class="detail-desc">
+				{{alamat}}
+			</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="desc">
+							<div class="title-desc">
+				Nomer Induk Pegawai (NIP)
+			</div>
+							<div class="detail-desc">
+				{{nip}}
+			</div>
+						</div>
+						<div class="desc">
+							<div class="title-desc">
+				Golongan/Pangkat
+			</div>
+							<div class="detail-desc">
+				{{golongan}}/{{pangkat}}
+			</div>
+						</div>
+						<div class="desc">
+							<div class="title-desc">
+				Instansi
+			</div>
+							<div class="detail-desc">
+				{{instansi}}
+			</div>
+						</div>
+						<div class="desc">
+							<div class="title-desc">
+				Jabatan
+			</div>
+							<div class="detail-desc">
+				{{jabatan}} {{mapel}}
+			</div>
+						</div>
+					</div>
+				</div> -->
+
+{% endblock content %}

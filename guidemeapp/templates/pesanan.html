@@ -1,0 +1,63 @@
+<style>
+    table tr:nth-child(1){
+        counter-reset: rowNumber;
+    }
+
+    table  tr{
+        counter-increment: rowNumber;
+    }
+
+    table tr td:first-child::before {
+        content: counter(rowNumber);
+        min-width: 1em;
+        margin-right: 0.5em;
+    }
+</style>
+
+{% extends 'based.html' %}
+
+
+{% block title %}
+
+<span style="color:#976dd8;">HomePage</span>
+{% endblock title %}
+
+{% block content %}
+<div class="w3-main">
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Tour Guide</th>
+                    <th scope="col">Lokasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pesanan in pesanan_data %}
+                <tr>
+                    <td></td>
+                    <td>
+                        <strong>{{pesanan.tour_guide.nama.nama}}</strong>  -  Agensi : {{pesanan.tour_guide.agensi.nama_agensi}}
+                    </td>
+                    <td>
+                        {{pesanan.lokasi}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>   
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-32">
+      <div class="w3-bar">
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+      </div>
+</div>
+{% endblock content %}
